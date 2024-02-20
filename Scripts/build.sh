@@ -2,6 +2,6 @@
 
 #Build image application
 
-docker build -t app:1.0 .
+docker build -t fjcuamatzi/api_cdk_ene2024:$1 .
 
 echo "construido"
