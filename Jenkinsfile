@@ -21,8 +21,19 @@ pipeline {
     }
 
     stage('test') {
-      steps {
-        sh 'python3 ./Tests/00_test_api.py'
+      parallel {
+        stage('test') {
+          steps {
+            sh 'python3 ./Tests/00_test_api.py'
+          }
+        }
+
+        stage('test1') {
+          steps {
+            sh 'python3 ./Tests/01_test_api.py'
+          }
+        }
+
       }
     }
 
