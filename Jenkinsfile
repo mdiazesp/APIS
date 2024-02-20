@@ -34,12 +34,18 @@ pipeline {
           }
         }
 
-        stage('test3') {
-          steps {
-            sh 'python3 ./Tests/03_test_api.py'
-          }
-        }
+      }
+    }
 
+    stage('stop') {
+      steps {
+        sh 'bash Scripts/stop.sh'
+      }
+    }
+
+    stage('upload_image') {
+      steps {
+        sh 'cat version_image | xargs bash Scripts/upload.sh'
       }
     }
 
