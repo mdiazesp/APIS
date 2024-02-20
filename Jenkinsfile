@@ -34,6 +34,12 @@ pipeline {
           }
         }
 
+        stage('test3') {
+          steps {
+            sh 'python3 ./Tests/03_test_api.py'
+          }
+        }
+
       }
     }
 
