@@ -13,5 +13,11 @@ pipeline {
       }
     }
 
+    stage('run') {
+      steps {
+        sh 'cat version_image | xargs bash Scripts/run.sh'
+      }
+    }
+
   }
 }
